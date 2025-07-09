@@ -18,6 +18,9 @@ const config = {
       precompress: true,
       strict: true,
     }),
+    paths: {
+      base: process.argv.includes('build') ? '/editor/arduino/' : '',
+    },
   },
 };
 
