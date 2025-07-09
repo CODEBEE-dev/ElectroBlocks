@@ -19,7 +19,7 @@ const config = {
       strict: true,
     }),
     paths: {
-      base: process.argv.includes('build') ? '/editor/arduino/' : '',
+      base: process.argv.includes('build') ? '/editor/arduino' : '',
     },
   },
 };
