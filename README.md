@@ -23,3 +23,25 @@ ElectroBlocks 를 CodeBridge 에 맞게 커스터마이징 하는 프로젝트�
     git rebase upstream/master
     ```
 
+<br />
+
+# 프로젝트 시작
+1. Git Clone
+    ```bash
+    git clone https://github.com/CODEBEE-dev/ElectroBlocks.git
+    ```
+2. 의존성 설치
+    ```bash
+    npm install
+    ```
+3. 개발모드 실행
+    ```bash
+    npm run dev
+    ```
+
+<br />
+
+# 프로젝트 Build
+```bash
+npm run build
+```
