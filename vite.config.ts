@@ -6,6 +6,6 @@ export default defineConfig(({ mode, command }) => {
   const isBuild = command === "build";
   return {
     plugins: [commonjs({ sourceMap: true }), sveltekit()],
-    base: isBuild ? "/editor/arduino" : "/",
+    base: isBuild ? "/editor/arduino/" : "/",
   };
 });
