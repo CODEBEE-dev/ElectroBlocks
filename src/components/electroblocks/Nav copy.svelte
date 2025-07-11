@@ -96,9 +96,80 @@
 
 <nav class:small={!$authStore.isLoggedIn}>
   <a href="/" class="logos">
-    <span class="codebridge-logo logo-name">CodeBridge</span>
-    <span class="codebridge-logo editor-name">arduino</span>
+    <img class="electroblocks" src="/logo.png" alt="">
+    <img class="fossee" src="/fossee.png" alt="">
   </a>
+  {#if $authStore.isLoggedIn}
+    <a
+      title="Home"
+      use:tooltip={navTooltipStyle}
+      href="{BASE_URL}/{params}"
+      class:active={isPathOnHomePage($page.url.pathname)}
+    >
+      <i class="fa fa-home" title="Simulator" use:tooltip={navTooltipStyle} />
+    </a>
+
+    <a
+      href="{BASE_URL}/code{params}"
+      title="Code"
+      use:tooltip={navTooltipStyle}
+      class:active={$page.url.pathname.includes("code")}
+    >
+      <i class="fa fa-code" />
+    </a>
+    <a
+      href="{BASE_URL}/arduino{params}"
+      use:tooltip={navTooltipStyle}
+      title="Upload"
+      class:active={$page.url.pathname.includes("arduino")}
+    >
+      <i class="fa fa-microchip" />
+    </a>
+
+    <a
+      href="{BASE_URL}/open"
+      use:tooltip={navTooltipStyle}
+      title="My Projects"
+      class:active={$page.url.pathname.includes('open')}
+    >
+      <i
+        class="fa"
+        class:fa-folder-open-o={!$page.url.pathname.includes('open')}
+        class:fa-folder-open={$page.url.pathname.includes('open')}
+      />
+    </a>
+    <span
+      title="New File/Blank File"
+      use:tooltip={navTooltipStyle}
+      on:click={onNewFileAuth}
+    >
+      <i class="fa fa-file-o" />
+    </span>
+    <span
+      title="Save Project"
+      use:tooltip={navTooltipStyle}
+      on:click={onSaveClick}><i class="fa fa-floppy-o" /></span
+    >
+    <a
+      title="Project Settings"
+      href="{BASE_URL}/project-settings"
+      use:tooltip={navTooltipStyle}
+      class:active={$page.url.pathname.includes("project-settings")}
+    >
+      <i class="fa fa-wrench" aria-hidden="true" />
+    </a>
+    <a
+      title="Settings"
+      use:tooltip={navTooltipStyle}
+      href="{BASE_URL}/settings"
+      class:active={$page.url.pathname.includes('settings')}
+    >
+      <i class="fa fa-gears" />
+    </a>
+    <span use:tooltip={navTooltipStyle} on:click={onSignOut} title="Sign Out">
+      <i class="fa fa-sign-out" title="Sign Out" aria-hidden="true" />
+    </span>
+  {/if}
 
   {#if !$authStore.isLoggedIn}
     <a
@@ -187,52 +258,75 @@
 
 <style>
   nav {
-    background-color: rgb(47, 65, 88);
-    box-sizing: border-box;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: system-ui, sans-serif;
-  }
-
-  nav a {
-    text-decoration: none;
-    color: white;
-    margin: 0 1em;
-  }
-
-  nav span {
-    color: white;
-    margin: 0 1em;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    height: 56px;
   }
   
-  a.logos {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    left: 100px;
+  img {
+    max-height: 49px;
+  }
+  img.electroblocks {
+    max-width: 30%;
+  }
+  img.fossee {
+    max-width: 60%;
   }
 
-  .codebridge-logo {
+  nav .fa {
+    color: #505bda;
+  }
+  
+  
+
+  nav a .fa,
+  nav span .fa,
+  nav .disabled .fa {
+    opacity: 0.5;
+  }
+
+  nav .active .fa {
+    color: #505bda !important;
+    opacity: 1;
+  }
+
+  nav a,
+  nav span,
+  label {
+    float: left;
+    width: calc((100% - 170px) / 10);
+    text-align: center;
+    padding: 2px 0;
+    transition: all 0.3s ease;
     color: white;
-    margin: 0 .5em 0 0;
+    font-size: 3rem;
+    cursor: pointer;
+    line-height: 1px;
+    margin-bottom: 0;
+    margin-top: 3px;
+  }
+  nav.small a,
+  nav.small span,
+  nav.small label {
+    width: calc((100% - 170px) / 9);
+  }
+  .logos {
+    width: 170px!important;
+  }
+  #saved {
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    background: #2c75e6;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+    transform: translateX(-50%);
+    z-index: 21;
+    color: #fff;
   }
 
-  .logo-name {
-    font-weight: 800;
-    font-size: medium;
-    letter-spacing: -0.025em;
-  }
-
-  .editor-name {
-    margin-left: 0.5em;
-    font-size: 12px;
-    font-weight: bold;
-    background-color: rgba(255, 255, 255, 0.2);
-    box-sizing: border-box;
-    padding: 0px 0.5em;
-    border-radius: 0.5em;
-    margin: 0;
+  :global(.tooltip.nav-tooltip) {
+    margin-top: 42px;
   }
 </style>
