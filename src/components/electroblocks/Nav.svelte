@@ -17,6 +17,9 @@
   import { goto } from "$app/navigation";
   import { page } from "$app/stores";
   import { tooltip } from "@svelte-plugins/tooltips";
+  import { base } from "$app/paths";
+
+  const BASE_URL = base || '';
 
   let canSave = true;
   let showSaveSuccess = false;
@@ -100,14 +103,14 @@
     <a
       title="Home"
       use:tooltip={navTooltipStyle}
-      href="/{params}"
+      href="{BASE_URL}/{params}"
       class:active={isPathOnHomePage($page.url.pathname)}
     >
       <i class="fa fa-home" title="Simulator" use:tooltip={navTooltipStyle} />
     </a>
 
     <a
-      href="/code{params}"
+      href="{BASE_URL}/code{params}"
       title="Code"
       use:tooltip={navTooltipStyle}
       class:active={$page.url.pathname.includes("code")}
@@ -115,7 +118,7 @@
       <i class="fa fa-code" />
     </a>
     <a
-      href="/arduino{params}"
+      href="{BASE_URL}/arduino{params}"
       use:tooltip={navTooltipStyle}
       title="Upload"
       class:active={$page.url.pathname.includes("arduino")}
@@ -124,7 +127,7 @@
     </a>
 
     <a
-      href="/open"
+      href="{BASE_URL}/open"
       use:tooltip={navTooltipStyle}
       title="My Projects"
       class:active={$page.url.pathname.includes('open')}
@@ -149,7 +152,7 @@
     >
     <a
       title="Project Settings"
-      href="/project-settings"
+      href="{BASE_URL}/project-settings"
       use:tooltip={navTooltipStyle}
       class:active={$page.url.pathname.includes("project-settings")}
     >
@@ -158,7 +161,7 @@
     <a
       title="Settings"
       use:tooltip={navTooltipStyle}
-      href="/settings"
+      href="{BASE_URL}/settings"
       class:active={$page.url.pathname.includes('settings')}
     >
       <i class="fa fa-gears" />
@@ -170,7 +173,7 @@
 
   {#if !$authStore.isLoggedIn}
     <a
-      href="/"
+      href="{BASE_URL}/"
       title="Home"
       use:tooltip={navTooltipStyle}
       class:active={isPathOnHomePage($page.url.pathname)}
@@ -179,7 +182,7 @@
     </a>
 
     <a
-      href="/code"
+      href="{BASE_URL}/code"
       title="Code"
       use:tooltip={navTooltipStyle}
       class:active={$page.url.pathname.includes("code")}
@@ -187,7 +190,7 @@
       <i class="fa fa-code" />
     </a>
     <a
-      href="/arduino"
+      href="{BASE_URL}/arduino"
       use:tooltip={navTooltipStyle}
       title="Upload"
       class:active={$page.url.pathname.includes("arduino")}
@@ -196,7 +199,7 @@
     </a>
 
     <a
-      href="/open"
+      href="{BASE_URL}/open"
       use:tooltip={navTooltipStyle}
       title="Projects"
       class:active={$page.url.pathname.includes("open")}
@@ -216,7 +219,7 @@
       <i class="fa fa-file-o" />
     </span>
     <a
-      href="/download"
+      href="{BASE_URL}/download"
       use:tooltip={navTooltipStyle}
       title="Download"
       class:active={$page.url.pathname.includes("download")}
@@ -224,7 +227,7 @@
       <i class="fa fa-download" />
     </a>
     <a
-      href="/settings"
+      href="{BASE_URL}/settings"
       use:tooltip={navTooltipStyle}
       title="Settings"
       class:active={$page.url.pathname.includes("settings")}
@@ -232,7 +235,7 @@
       <i class="fa fa-gears" />
     </a>
     <a
-      href="/login"
+      href="{BASE_URL}/login"
       use:tooltip={navTooltipStyle}
       title="Login"
       class:active={$page.url.pathname.includes("login")}
@@ -243,7 +246,7 @@
   <a
       title="About"
       use:tooltip={navTooltipStyle}
-      href="/about"
+      href="{BASE_URL}/about"
       class:active={$page.url.pathname.includes("about")}
     >
       <i class="fa fa-info-circle" />
