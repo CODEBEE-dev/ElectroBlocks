@@ -208,10 +208,10 @@
           <div class="col-4">
             <div class="card" on:click={() => goto(`/?example_project=${lesson.file}`)}>
               <div class="card-body">
-                <img loading="lazy" src={`${base}${lesson.levelImage}`} alt="difficulty-level" class="level">
+                <img loading="lazy" src={lesson.levelImage} alt="difficulty-level" class="level">
                 <h5 class="card-title">{lesson.title}</h5>
               </div>
-              <img src={lesson.image} class="card-img-bottom" alt={lesson.title}>
+              <img src={`${base}${lesson.image}`} class="card-img-bottom" alt={lesson.title}>
             </div>
           </div>
           
