@@ -185,11 +185,11 @@
         <h2 class="p-0">Demo Projects!</h2>
       </div>
       <div class="col-9 legend">
-        <img src="/example-projects/easy.png" alt="difficulty-level" class="legend easy"  >
+        <img src="{base}/example-projects/easy.png" alt="difficulty-level" class="legend easy"  >
         <span class="easy">Easy</span>
-        <img src="/example-projects/medium.png" alt="difficulty-level" class="legend medium"  >
+        <img src="{base}/example-projects/medium.png" alt="difficulty-level" class="legend medium"  >
         <span class="medium">Medium</span>
-        <img src="/example-projects/hard.png" alt="difficulty-level" class="legend hard" >
+        <img src="{base}/example-projects/hard.png" alt="difficulty-level" class="legend hard" >
         <span class="hard">Hard</span>
       </div>
     </div>
