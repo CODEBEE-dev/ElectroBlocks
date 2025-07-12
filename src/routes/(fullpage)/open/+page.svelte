@@ -206,7 +206,7 @@
         <div class="row g-2 g-lg-3">
           {#each lessonRow as lesson }
           <div class="col-4">
-            <div class="card" on:click={() => goto(`${base}/?example_project=${base}${lesson.file}`)}>
+            <div class="card" on:click={() => goto(`${base}/?example_project=${lesson.file}`)}>
               <div class="card-body">
                 <img loading="lazy" src={`${base}${lesson.levelImage}`} alt="difficulty-level" class="level">
                 <h5 class="card-title">{lesson.title}</h5>
@@ -214,7 +214,6 @@
               <img src={`${base}${lesson.image}`} class="card-img-bottom" alt={lesson.title}>
             </div>
           </div>
-          
           {/each}
         </div>
       {/each}

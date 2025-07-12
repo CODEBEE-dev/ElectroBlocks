@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import { onMount, tick } from 'svelte';
   import _ from 'lodash';
   import { getAuth, onAuthStateChanged } from 'firebase/auth';
@@ -137,7 +138,7 @@
     const auth = getAuth();
 
     if ($page.url.searchParams.get('example_project') !== null) {
-        const localFileResponse = await fetch(`/example-projects/${$page.url.searchParams.get('example_project')}`);
+        const localFileResponse = await fetch(`${base}/example-projects/${$page.url.searchParams.get('example_project')}`);
         const xmlFile = await localFileResponse.text();
         loadProject(xmlFile);
         loadedProject = true;
