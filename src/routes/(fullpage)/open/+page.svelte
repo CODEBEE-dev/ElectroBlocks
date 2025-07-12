@@ -66,7 +66,9 @@
 
       projectStore.set({ project: null, projectId: null });
       localStorage.setItem('reload_once_workspace', evt.target.result as string);
-      await goto('/');
+
+      // xml load 후 이동
+      await goto(`${base}/`);
     };
 
     reader.readAsText(file);
@@ -183,20 +185,20 @@
         <h2 class="p-0">Demo Projects!</h2>
       </div>
       <div class="col-9 legend">
-        <img src="{base}/example-projects/easy.png" alt="difficulty-level" class="legend easy"  >
+        <img src="/example-projects/easy.png" alt="difficulty-level" class="legend easy"  >
         <span class="easy">Easy</span>
-        <img src="{base}/example-projects/medium.png" alt="difficulty-level" class="legend medium"  >
+        <img src="/example-projects/medium.png" alt="difficulty-level" class="legend medium"  >
         <span class="medium">Medium</span>
-        <img src="{base}/example-projects/hard.png" alt="difficulty-level" class="legend hard" >
+        <img src="/example-projects/hard.png" alt="difficulty-level" class="legend hard" >
         <span class="hard">Hard</span>
       </div>
     </div>
     <!-- <div class="row legend">
-        <img src="{base}/example-projects/easy.png" alt="difficulty-level" >
+        <img src="/example-projects/easy.png" alt="difficulty-level" >
         <p class="text-center w-100 mb-2">Easy</p>
-        <img src="{base}/example-projects/medium.png" alt="difficulty-level" >
+        <img src="/example-projects/medium.png" alt="difficulty-level" >
         <p class="text-center w-100 mb-2">Medium</p>
-        <img src="{base}/example-projects/hard.png" alt="difficulty-level" >
+        <img src="/example-projects/hard.png" alt="difficulty-level" >
         <p class="text-center w-100 mb-2">Hard</p>
     </div> -->
         
@@ -204,12 +206,12 @@
         <div class="row g-2 g-lg-3">
           {#each lessonRow as lesson }
           <div class="col-4">
-            <div class="card" on:click={() => goto(`/?example_project=${base}/example-projects/${lesson.file}`)}>
+            <div class="card" on:click={() => goto(`/?example_project=${lesson.file}`)}>
               <div class="card-body">
-                <img loading="lazy" src="{base + lesson.levelImage}" alt="difficulty-level" class="level">
+                <img loading="lazy" src={lesson.levelImage} alt="difficulty-level" class="level">
                 <h5 class="card-title">{lesson.title}</h5>
               </div>
-              <img src="{base + lesson.image}" class="card-img-bottom" alt={lesson.title}>
+              <img src={lesson.image} class="card-img-bottom" alt={lesson.title}>
             </div>
           </div>
           
