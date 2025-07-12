@@ -47,6 +47,26 @@ mission, FOSSEE is implementing and promoting ElectroBlocks to schools and codin
         their ability to create and innovate using electronics and programming.</p>
         </div>
     </div>
+    
+    <div class="row">
+        <div class="col">
+            <h2>License Information</h2>
+            <p>This project is a fork of ElectroBlocks, originally created by Noah Glaser.</p>
+            <p>
+                Original Project: 
+                <a href="https://github.com/ElectroBlocks/ElectroBlocks" target="_blank">
+                    https://github.com/ElectroBlocks/ElectroBlocks
+                </a>
+            </p>
+            <p>
+                This software is licensed under the GNU General Public License v3.0 (GPL-3.0).
+                The complete source code is available at: 
+                <a href="https://github.com/CODEBEE-dev/ElectroBlocks" target="_blank">
+                    https://github.com/CODEBEE-dev/ElectroBlocks
+                </a>
+            </p>
+        </div>
+    </div>
 </main>
 
 <style>
@@ -56,5 +76,13 @@ mission, FOSSEE is implementing and promoting ElectroBlocks to schools and codin
     main {
         overflow: scroll;
         height: 100%;
+    }
+    a {
+        color: #505bda;
+        text-decoration: underline;
+    }
+    h2 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
     }
 </style>
