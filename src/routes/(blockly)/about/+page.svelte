@@ -12,6 +12,7 @@
       </div>
     </div>
     <div class="row">
+        <h1>About ElectroBlocks</h1>
         <div class="col">
             <p>ElectroBlocks is a user-friendly platform developed by Noah Glaser that simplifies the learning
                 of electronics and programming. Designed for students of all levels, ElectroBlocks enables them
