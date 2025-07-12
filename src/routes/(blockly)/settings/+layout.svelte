@@ -28,7 +28,7 @@
   </div>
   <div class="row">
     <div class="col">
-      <FormGroup>
+      <!-- <FormGroup>
         <Label for="exampleSelect">Navigation</Label>
         <Input
           bind:value
@@ -46,10 +46,10 @@
 
           <option value="/settings/privacy-policy">Privacy Policy</option>
         </Input>
-      </FormGroup>
+      </FormGroup> -->
     </div>
   </div>
-  <hr />
+  <!-- <hr /> -->
 
   <slot />
 </main>

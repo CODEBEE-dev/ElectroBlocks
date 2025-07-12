@@ -70,7 +70,7 @@
   </div>
 </main>
 <svelte:head>
-  <title>ElectroBlocks - Download</title>
+  <title>CodeBridge - Download</title>
 </svelte:head>
 
 <style>

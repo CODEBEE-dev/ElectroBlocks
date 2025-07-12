@@ -13,7 +13,7 @@
   </div>
 </VerticalComponentContainer>
 <svelte:head>
-  <title>ElectroBlocks</title>
+  <title>CodeBridge arduino editor</title>
 </svelte:head>
 
 <style>

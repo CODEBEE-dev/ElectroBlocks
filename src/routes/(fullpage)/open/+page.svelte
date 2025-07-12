@@ -220,7 +220,7 @@
       
 </main>
 <svelte:head>
-  <title>ElectroBlocks - Open Projects</title>
+  <title>CodeBridge - Open Projects</title>
 </svelte:head>
 
 <style>

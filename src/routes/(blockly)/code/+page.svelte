@@ -91,7 +91,7 @@
   <code class="language-arduino">{@html code}</code>
 </pre>
 <svelte:head>
-  <title>ElectroBlocks - Code</title>
+  <title>CodeBridge - Code</title>
 </svelte:head>
 
 <style>

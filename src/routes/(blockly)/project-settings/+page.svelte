@@ -167,7 +167,7 @@
 </main>
 
 <svelte:head>
-  <title>ElectroBlocks - Project Settings</title>
+  <title>CodeBridge - Project Settings</title>
 </svelte:head>
 
 <style>

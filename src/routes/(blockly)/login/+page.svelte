@@ -11,7 +11,7 @@
   google.
 </p>
 <svelte:head>
-  <title>ElectroBlocks - Login</title>
+  <title>CodeBridge - Login</title>
 </svelte:head>
 
 <style>

@@ -163,14 +163,14 @@
     >
       <i class="fa fa-gears" />
     </a>
-    <a
+    <!-- <a
       href="{BASE_URL}/login"
       use:tooltip={navTooltipStyle}
       title="Login"
       class:active={$page.url.pathname.includes("login")}
     >
       <i class="fa fa-sign-in" />
-    </a>
+    </a> -->
   {/if}
   <a
       title="About"
