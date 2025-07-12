@@ -1,9 +1,13 @@
+<script>
+  import { base } from '$app/paths'
+</script>
+
 <main class="container">
     <div class="row">
       <div class="col logos">
-        <img src="/logo.png" alt="logo">
+        <img src="{base}/logo.png" alt="logo" class="logo">
         <a target="_blank" href="https://fossee.in/">
-            <img src="/fossee.png" alt="fossee logo">
+            <img src="{base}/fossee.png" alt="fossee logo" class="logo">
         </a>
       </div>
     </div>
